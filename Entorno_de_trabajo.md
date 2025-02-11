@@ -60,60 +60,99 @@ source ~/.bashrc
 
 
 ### Instalación de ASDF
+
+
 Fedora
 
 Instalar las dependencias necesarias:
-sh
 
+~~~
 sudo dnf install golan
-
+~~~
 Clonar el repositorio de ASDF:
-sh
+~~~
 
 git clone https://github.com/asdf-vm/asdf.git --branch v0.16.0
+~~~
 
 Ejecutar make:
-sh
+~~~
 
 cd asdf
 make
-
+~~~
 Copiar el binario a un directorio en tu $PATH:
-sh
 
+~~~
 sudo cp asdf /usr/local/bin/
-
+~~~
 Verificar que asdf esté en tu $PATH:
-sh
 
+~~~
 type -a asdf
-
+~~~
 Debian
 
 Instalar las dependencias necesarias:
-sh
+~~~
 
 sudo apt-get install golang
+~~~
 
 Clonar el repositorio de ASDF:
-sh
+~~~
 
 git clone https://github.com/asdf-vm/asdf.git --branch v0.16.0
+~~~
 
 Ejecutar make:
-sh
+~~~
 
 cd asdf
 make
+~~~
 
 Copiar el binario a un directorio en tu $PATH:
-sh
+~~~
 
 sudo cp asdf /usr/local/bin/
+~~~
 
 Verificar que asdf esté en tu $PATH:
-sh
 
+~~~
 type -a asdf
+~~~
 
-You can now update the Entorno_de_trabajo.md file with these organized instructions.
+Instala los plugins asdf Scarb, Starknet Foundry y Starknet Devnet:
+
+~~~
+asdf plugin add scarb
+asdf plugin add starknet-foundry
+asdf plugin add starknet-devnet
+
+~~~
+
+Instala las últimas versiones de Scarb, Starknet Foundry y Starknet Devnet:
+
+~~~
+asdf install scarb latest
+asdf install starknet-foundry latest
+asdf install starknet-devnet latest
+~~~
+
+Establecer versiones globales para Scarb, Starknet Foundry y Starknet Devnet:
+
+~~~
+asdf global scarb latest
+asdf global starknet-foundry latest
+asdf global starknet-devnet latest
+~~~
+
+Reinicie el terminal y compruebe que Scarb, Starknet Foundry y Starknet Devnet están instalados correctamente:
+
+~~~
+scarb --version
+snforge --version && sncast --version
+starknet-devnet --version
+~~~
